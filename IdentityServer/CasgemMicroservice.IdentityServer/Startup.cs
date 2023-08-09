@@ -29,10 +29,9 @@ namespace CasgemMicroservice.IdentityServer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
+            services.AddLocalApiAuthentication();
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
@@ -81,6 +80,7 @@ namespace CasgemMicroservice.IdentityServer
 
             app.UseRouting();
             app.UseIdentityServer();
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
