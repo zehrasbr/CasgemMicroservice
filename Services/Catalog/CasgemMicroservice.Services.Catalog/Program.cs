@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.Authority = builder.Configuration["IdentityServerUrl"];
-    options.Audience = "resoulce_catalog";
+    options.Audience = "resource_catalog";
     options.RequireHttpsMetadata = false;
 });
 // Add services to the container.
