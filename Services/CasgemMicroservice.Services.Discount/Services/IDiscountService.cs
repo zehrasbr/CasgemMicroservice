@@ -8,8 +8,8 @@ namespace CasgemMicroservice.Services.Discount.Services
 	{
 		Task<Response<List<ResultDiscountDto>>> GetAllDiscountCouponsAsync();
 		Task<Response<ResultDiscountDto>> GetByIdDiscountCoupon(int id);
-		Task<Response<NoContent>> CreateDiscountCoupuns(DiscountCoupons discountCoupons);
-		Task<Response<NoContent>> UpdateDiscountCouponsAsync(DiscountCoupons discountCoupons);
+		Task<Response<NoContent>> CreateDiscountCoupuns(CreateDiscountDto createDiscountDto);
+		Task<Response<NoContent>> UpdateDiscountCouponsAsync(UpdateDiscountDto updateDiscountDto);
 		Task<Response<NoContent>> DeleteDiscountCoupons(int id);
 	}
 }
