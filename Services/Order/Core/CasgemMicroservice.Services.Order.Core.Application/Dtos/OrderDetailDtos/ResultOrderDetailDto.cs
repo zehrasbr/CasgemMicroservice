@@ -13,6 +13,6 @@ namespace CasgemMicroservice.Services.Order.Core.Application.Dtos.OrderDetailDto
         public string PrdouctName { get; set; }
         public decimal PrdouctPrice { get; set; }
         public int PrdouctAmount { get; set; }
-        public int OderID { get; set; }
+        public int OderingID { get; set; }
     }
 }
