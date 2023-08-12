@@ -9,9 +9,9 @@ namespace CasgemMicroservice.Services.Order.Core.Application.Interfaces
     public interface IRepository<T> where T : class
     {
         Task<List<T>> GetAllAsync();
-        Task<List<T>> GetByIdAsync(int id);
+        Task<T> GetByIdAsync(int id);
         Task<T> CreateAsync(T entity);
         Task<T> UpdateAsync(T entity);
-        Task<T> DeleteAsyn(T entity);
+        Task<T> DeleteAsync(T entity);
     }
 }

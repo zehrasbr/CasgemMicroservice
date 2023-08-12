@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 namespace CasgemMicroservice.Services.Order.Infrastructure.Persistance.Context
 {
     public class OrderContext : DbContext
-    {
+    { 
+           
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=localhost,1433;Database=CasgemOrderDb;User=sa;Password=123456Aa*");
