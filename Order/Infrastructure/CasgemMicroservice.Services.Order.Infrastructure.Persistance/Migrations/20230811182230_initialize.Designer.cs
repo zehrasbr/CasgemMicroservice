@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CasgemMicroservice.Services.Order.Infrastructure.Persistance.Migrations
 {
     [DbContext(typeof(OrderContext))]
-    [Migration("20230811135619_initialize")]
+    [Migration("20230811182230_initialize")]
     partial class initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
