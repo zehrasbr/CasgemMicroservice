@@ -10,5 +10,6 @@ namespace CasgemMicroservice.Services.Order.Core.Application.Features.CQRS.Queri
 {
     public class GetAllOrderDetailQueryRequest : IRequest<List<ResultOrderDetailDto>>
     {
+
     }
 }
