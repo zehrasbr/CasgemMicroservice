@@ -20,6 +20,7 @@ namespace CasgemMicroservice.Services.Order.Core.Application.Features.CQRS.Handl
         }
 
 
+
         public Task Handle(CreateOrderingCommandRequest request, CancellationToken cancellationToken)
         {
             var values = new Ordering
