@@ -43,6 +43,7 @@ namespace CasgemMicroservice.Services.Cargo.DataAccessLayer.Repository
         {
             _context.Set<T>().Update(entity);
             _context.SaveChanges();
+
         }
     }
 }
