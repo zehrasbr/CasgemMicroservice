@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Amazon.Runtime.Internal;
+using AutoMapper;
 using CasgemMicroservice.Services.Order.Core.Application.Dtos.OrderingDtos;
 using CasgemMicroservice.Services.Order.Core.Application.Features.CQRS.Queries;
 using CasgemMicroservice.Services.Order.Core.Application.Interfaces;
@@ -12,20 +13,21 @@ using System.Threading.Tasks;
 
 namespace CasgemMicroservice.Services.Order.Core.Application.Features.CQRS.Handlers
 {
-    public class GetByIdOrderingQueryHandler : IRequestHandler<GetByIdOrderingQueryRequest, ResultOrderingDto>
+    public class GetOrderByUserIdCommandHandler : IRequestHandler<GetOrderByUserIdQueryRequest, List<ResultOrderingDto>>
     {
         private readonly IRepository<Ordering> _repository;
         private readonly IMapper _mapper;
-        public GetByIdOrderingQueryHandler(IMapper mapper, IRepository<Ordering> repository)
+
+        public GetOrderByUserIdCommandHandler(IMapper mapper, IRepository<Ordering> repository)
         {
             _mapper = mapper;
             _repository = repository;
         }
 
-        public async Task<ResultOrderingDto> Handle(GetByIdOrderingQueryRequest request, CancellationToken cancellationToken)
+        public async Task<List<ResultOrderingDto>> Handle(GetOrderByUserIdQueryRequest request, CancellationToken cancellationToken)
         {
-            var value = await _repository.GetByIdAsync(request.Id);
-            return _mapper.Map<ResultOrderingDto>(value);
+            var value = await _repository.GetOrdersById(x => x.UserID == request.Id);
+            return _mapper.Map<List<ResultOrderingDto>>(value);
         }
     }
 }
