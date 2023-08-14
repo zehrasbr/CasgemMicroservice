@@ -2,13 +2,31 @@ using CasgemMicroservice.Services.Order.Core.Application;
 using CasgemMicroservice.Services.Order.Core.Application.Interfaces;
 using CasgemMicroservice.Services.Order.Infrastructure.Persistance.Context;
 using CasgemMicroservice.Services.Order.Infrastructure.Persistance.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+
+
+var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+{
+    opt.Authority = builder.Configuration["IdentityServerUrl"];
+    opt.Audience = "resource_order";
+    opt.RequireHttpsMetadata = false;
+});
+builder.Services.AddControllers(opt=>
+{
+    opt.Filters.Add(new AuthorizeFilter(requireAuthorizePolicy));
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -27,6 +45,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
