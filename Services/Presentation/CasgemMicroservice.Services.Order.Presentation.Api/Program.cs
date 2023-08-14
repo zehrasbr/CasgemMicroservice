@@ -2,6 +2,7 @@ using CasgemMicroservice.Services.Order.Core.Application;
 using CasgemMicroservice.Services.Order.Core.Application.Interfaces;
 using CasgemMicroservice.Services.Order.Infrastructure.Persistance.Context;
 using CasgemMicroservice.Services.Order.Infrastructure.Persistance.Repositories;
+using CasgemMicroservice.Shared.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -31,8 +32,12 @@ builder.Services.AddControllers(opt=>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<OrderContext>();
+
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ISharedIdentityService, SharedIdentityService>();
+
 builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();

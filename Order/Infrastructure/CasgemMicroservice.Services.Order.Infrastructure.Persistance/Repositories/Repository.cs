@@ -44,7 +44,7 @@ namespace CasgemMicroservice.Services.Order.Infrastructure.Persistance.Repositor
 
         public async Task<List<T>> GetOrdersById(Expression<Func<T, bool>> filter = null)
         {
-            return await _context.Set<T>().Where(filter).ToListAsync(); 
+           return await _context.Set<T>().Where(filter).ToListAsync(); 
         }
 
         public async Task<T> UpdateAsync(T entity)

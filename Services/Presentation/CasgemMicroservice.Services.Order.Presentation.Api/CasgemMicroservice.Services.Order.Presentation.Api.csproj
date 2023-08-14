@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Order\Infrastructure\CasgemMicroservice.Services.Order.Infrastructure.Persistance\CasgemMicroservice.Services.Order.Infrastructure.Persistance.csproj" />
+    <ProjectReference Include="..\..\..\Shared\CasgemMicroservice.Shared\CasgemMicroservice.Shared.csproj" />
     <ProjectReference Include="..\..\Order\Core\CasgemMicroservice.Services.Order.Core.Application\CasgemMicroservice.Services.Order.Core.Application.csproj" />
   </ItemGroup>
 
