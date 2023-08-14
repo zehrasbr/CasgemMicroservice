@@ -50,7 +50,6 @@ namespace CasgemMicroservice.Services.Order.Infrastructure.Persistance.Migration
                     PrdouctName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PrdouctPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     PrdouctAmount = table.Column<int>(type: "int", nullable: false),
-                    OderingID = table.Column<int>(type: "int", nullable: false),
                     OrderingID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

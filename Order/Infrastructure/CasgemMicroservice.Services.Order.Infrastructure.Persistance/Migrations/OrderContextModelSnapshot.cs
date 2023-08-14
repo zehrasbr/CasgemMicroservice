@@ -59,9 +59,6 @@ namespace CasgemMicroservice.Services.Order.Infrastructure.Persistance.Migration
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderDetailID"), 1L, 1);
 
-                    b.Property<int>("OderingID")
-                        .HasColumnType("int");
-
                     b.Property<int>("OrderingID")
                         .HasColumnType("int");
 

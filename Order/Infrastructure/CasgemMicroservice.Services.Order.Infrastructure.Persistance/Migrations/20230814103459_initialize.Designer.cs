@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CasgemMicroservice.Services.Order.Infrastructure.Persistance.Migrations
 {
     [DbContext(typeof(OrderContext))]
-    [Migration("20230811182230_initialize")]
+    [Migration("20230814103459_initialize")]
     partial class initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -60,9 +60,6 @@ namespace CasgemMicroservice.Services.Order.Infrastructure.Persistance.Migration
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderDetailID"), 1L, 1);
-
-                    b.Property<int>("OderingID")
-                        .HasColumnType("int");
 
                     b.Property<int>("OrderingID")
                         .HasColumnType("int");
