@@ -59,13 +59,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasgemMicroservice.Services
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasgemMicroservice.Services.Order.Presentation.Api", "Services\Presentation\CasgemMicroservice.Services.Order.Presentation.Api\CasgemMicroservice.Services.Order.Presentation.Api.csproj", "{5D79B304-858D-4CDC-864D-40A7E263E0C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasgemMicroservice.Services.Cargo.BusinessLayer", "Services\Cargo\CasgemMicroservice.Services.Cargo.BusinessLayer\CasgemMicroservice.Services.Cargo.BusinessLayer.csproj", "{EE3F8FB8-7024-4F81-BAAF-3FBED5B7A25F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasgemMicroservice.Services.Cargo.BusinessLayer", "Services\Cargo\CasgemMicroservice.Services.Cargo.BusinessLayer\CasgemMicroservice.Services.Cargo.BusinessLayer.csproj", "{EE3F8FB8-7024-4F81-BAAF-3FBED5B7A25F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasgemMicroservice.Services.Cargo.DataAccessLayer", "Services\Cargo\CasgemMicroservice.Services.Cargo.DataAccessLayer\CasgemMicroservice.Services.Cargo.DataAccessLayer.csproj", "{0C798A62-8FB2-466C-812D-3CCE52ABF86C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasgemMicroservice.Services.Cargo.DataAccessLayer", "Services\Cargo\CasgemMicroservice.Services.Cargo.DataAccessLayer\CasgemMicroservice.Services.Cargo.DataAccessLayer.csproj", "{0C798A62-8FB2-466C-812D-3CCE52ABF86C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasgemMicroservice.Services.Cargo.EntityLayer", "Services\Cargo\CasgemMicroservice.Services.Cargo.EntityLayer\CasgemMicroservice.Services.Cargo.EntityLayer.csproj", "{C306D97F-4977-4CE1-A868-1E391FF4F6FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasgemMicroservice.Services.Cargo.EntityLayer", "Services\Cargo\CasgemMicroservice.Services.Cargo.EntityLayer\CasgemMicroservice.Services.Cargo.EntityLayer.csproj", "{C306D97F-4977-4CE1-A868-1E391FF4F6FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasgemMicroservice.Services.WebApi", "Services\Cargo\CasgemMicroservice.Services.WebApi\CasgemMicroservice.Services.WebApi.csproj", "{FA5ECDCA-08EF-4F86-ACE6-A6989CCE759D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasgemMicroservice.Services.WebApi", "Services\Cargo\CasgemMicroservice.Services.WebApi\CasgemMicroservice.Services.WebApi.csproj", "{FA5ECDCA-08EF-4F86-ACE6-A6989CCE759D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasgemMicroservice.Services.Payment.WebApi", "Services\Payment\CasgemMicroservice.Services.Payment.WebApi\CasgemMicroservice.Services.Payment.WebApi.csproj", "{E9B7B574-2AEC-4D66-88D8-D2A7B5F8DB54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +131,10 @@ Global
 		{FA5ECDCA-08EF-4F86-ACE6-A6989CCE759D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA5ECDCA-08EF-4F86-ACE6-A6989CCE759D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA5ECDCA-08EF-4F86-ACE6-A6989CCE759D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9B7B574-2AEC-4D66-88D8-D2A7B5F8DB54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9B7B574-2AEC-4D66-88D8-D2A7B5F8DB54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9B7B574-2AEC-4D66-88D8-D2A7B5F8DB54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9B7B574-2AEC-4D66-88D8-D2A7B5F8DB54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -158,6 +164,7 @@ Global
 		{0C798A62-8FB2-466C-812D-3CCE52ABF86C} = {A869A93A-7B38-4D4C-B816-A4EAD98BFBB8}
 		{C306D97F-4977-4CE1-A868-1E391FF4F6FC} = {A869A93A-7B38-4D4C-B816-A4EAD98BFBB8}
 		{FA5ECDCA-08EF-4F86-ACE6-A6989CCE759D} = {A869A93A-7B38-4D4C-B816-A4EAD98BFBB8}
+		{E9B7B574-2AEC-4D66-88D8-D2A7B5F8DB54} = {C587B6AC-960D-4AB9-8EC7-31A9EE290B43}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A48FD3FF-8EC0-4BF2-9A5A-1AAAFDD60CD5}
