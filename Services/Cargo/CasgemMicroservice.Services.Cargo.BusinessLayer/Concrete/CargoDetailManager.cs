@@ -1,4 +1,5 @@
-﻿using CasgemMicroservice.Services.Cargo.DataAccessLayer.Abstract;
+﻿using CasgemMicroservice.Services.Cargo.BusinessLayer.Abstract;
+using CasgemMicroservice.Services.Cargo.DataAccessLayer.Abstract;
 using CasgemMicroservice.Services.Cargo.EntityLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CasgemMicroservice.Services.Cargo.BusinessLayer.Concrete
 {
-    public class CargoDetailManager : ICargoDetailDal
+    public class CargoDetailManager : ICargoDetailService
     {
         private readonly ICargoDetailDal _cargoDetailDal;
 
@@ -39,7 +40,7 @@ namespace CasgemMicroservice.Services.Cargo.BusinessLayer.Concrete
 
         public void Update(CargoDetail entity)
         {
-            _cargoDetailDal.Insert(entity);
+            _cargoDetailDal.Update(entity);
         }
     }
 }

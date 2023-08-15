@@ -3,7 +3,7 @@ using CasgemMicroservice.Services.Cargo.EntityLayer.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CasgemMicroservice.Services.WebApi.Controllers
+namespace CasgemMicroservice.Services.Cargo.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -16,35 +16,39 @@ namespace CasgemMicroservice.Services.WebApi.Controllers
             _cargoStateService = cargoStateService;
         }
 
-        [HttpGet]
+        [HttpGet("getList")]
         public IActionResult CargoStateList()
         {
             var values = _cargoStateService.GetAll();
             return Ok(values);
         }
-        [HttpGet("{id}")]
+
+        [HttpGet("getCargoState/{id}")]
         public IActionResult CargoStateGet(int id)
         {
-            var value = _cargoStateService.GetById(id);
-            return Ok(value);
+            var values = _cargoStateService.GetById(id);
+            return Ok(values);
         }
+
         [HttpPost]
         public IActionResult CargoStateCreate(CargoState cargoState)
         {
             _cargoStateService.Insert(cargoState);
-            return Ok("Kargo Durumu Eklendi");
+            return Ok("Kargo Durumu Eklendi.");
         }
+
         [HttpPut]
         public IActionResult CargoStateUpdate(CargoState cargoState)
         {
             _cargoStateService.Update(cargoState);
-            return Ok("Kargo Durumu Güncellendi");
+            return Ok("Kargo Durumu Güncellendi.");
         }
+
         [HttpDelete]
         public IActionResult CargoStateDelete(CargoState cargoState)
         {
             _cargoStateService.Delete(cargoState);
-            return Ok("Kargo Durumu Silindi");
+            return Ok("Kargo Durumu Silindi.");
         }
     }
 }
