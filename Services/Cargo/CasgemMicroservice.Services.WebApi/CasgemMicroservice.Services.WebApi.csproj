@@ -16,11 +16,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\IdentityServer\CasgemMicroservice.IdentityServer\CasgemMicroservice.IdentityServer.csproj" />
+    <ProjectReference Include="..\CasgemMicroservice.Services.Cargo.BusinessLayer\CasgemMicroservice.Services.Cargo.BusinessLayer.csproj" />
     <ProjectReference Include="..\CasgemMicroservice.Services.Cargo.DataAccessLayer\CasgemMicroservice.Services.Cargo.DataAccessLayer.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
